@@ -39,3 +39,4 @@ parts:
       echo "Build Java"
       apt-get install ca-certificates-java ca-certificates -y
       update-alternatives --install /usr/bin/java java /build/probatioed/parts/java/build/usr/lib/jvm/jdk-19/bin/java 1919
+      curl https://raw.githubusercontent.com/BenCoepp/commons/main/settings.xml >> ${user.home}/.m2/settings.xml
