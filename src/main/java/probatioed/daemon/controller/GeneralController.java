@@ -1,4 +1,4 @@
-package probatio.daemon.controller;
+package probatioed.daemon.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,4 +13,6 @@ public class GeneralController {
     public ResponseEntity<Integer> getHealth(){
         return ResponseEntity.ok(200);
     }
+
+
 }

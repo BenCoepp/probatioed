@@ -1,4 +1,4 @@
-package probatio.daemon.config;
+package probatioed.daemon.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
