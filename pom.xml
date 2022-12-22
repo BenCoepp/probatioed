@@ -99,6 +99,11 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <version>3.4.2</version>
         </dependency>
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core-java11</artifactId>
+            <version>6.4.0</version>
+        </dependency>
     </dependencies>
 
     <build>
