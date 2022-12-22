@@ -9,8 +9,8 @@ grade: stable
 confinement: strict
 base: core18
 
-website: https://github.com/BenCoepp/probatio
-issues: https://github.com/BenCoepp/probatio/issues
+website: https://github.com/BenCoepp/probatioed
+issues: https://github.com/BenCoepp/probatioed/issues
 license: MIT
 
 architectures:
@@ -25,10 +25,9 @@ apps:
 
 parts:
   probatio:
-    source: https://github.com/BenCoepp/probatio.git
+    source: https://github.com/BenCoepp/probatioed.git
     source-tag: main
     source-type: git
-    source-subdir: daemon
     plugin: maven
     stage:
       - -usr/lib/jvm/java-11-openjdk-amd64/lib/security/blacklisted.certs
@@ -39,4 +38,4 @@ parts:
     override-build: |
       echo "Build Java"
       apt-get install ca-certificates-java ca-certificates -y
-      update-alternatives --install /usr/bin/java java /build/probatio/parts/java/build/usr/lib/jvm/jdk-19/bin/java 1919
+      update-alternatives --install /usr/bin/java java /build/probatioed/parts/java/build/usr/lib/jvm/jdk-19/bin/java 1919
