@@ -10,7 +10,7 @@
     </parent>
     <groupId>probatioed</groupId>
     <artifactId>daemon</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>daemon</name>
     <description>daemon</description>
     <properties>
@@ -91,44 +91,15 @@
             <artifactId>maven-assembly-plugin</artifactId>
             <version>3.4.2</version>
         </dependency>
+        <dependency>
+            <groupId>bencoepp.probatio</groupId>
+            <artifactId>commons</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.0</version>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.1.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
-                            <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>probatioed.daemon.DaemonApplication</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                </configuration>
-            </plugin>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -147,7 +118,7 @@
     <distributionManagement>
         <repository>
             <id>github</id>
-            <name>Probatioed</name>
+            <name>probatioed</name>
             <url>https://maven.pkg.github.com/BenCoepp/probatioed</url>
         </repository>
     </distributionManagement>
