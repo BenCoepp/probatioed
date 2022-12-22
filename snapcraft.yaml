@@ -24,7 +24,7 @@ apps:
     daemon: simple
 
 parts:
-  probatio:
+  probatioed:
     source: https://github.com/BenCoepp/probatioed.git
     source-tag: main
     source-type: git
