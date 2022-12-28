@@ -15,7 +15,7 @@ public class ProjectTask extends SchedulerTask {
     public void execute() throws IOException {
         App app = new App();
         app.init();
-        projectRepository.flush();
+        projectRepository.deleteAll();
         projectRepository.saveAll(app.getProjects());
     }
 }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import probatioed.daemon.entity.Project;
@@ -23,14 +24,5 @@ public class ProjectController {
     public ResponseEntity<List<Project>> getAll(){
         List<Project> projects = projectRepository.findAll();
         return ResponseEntity.ok(projects);
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<Project> getProject(@RequestParam int id){
-        Optional<Project> optionalProject = projectRepository.findById(id);
-        if(optionalProject.isEmpty()){
-            return ResponseEntity.badRequest().build();
-        }
-        return ResponseEntity.ok(optionalProject.get());
     }
 }
