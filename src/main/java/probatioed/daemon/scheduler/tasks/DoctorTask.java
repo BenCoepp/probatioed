@@ -22,6 +22,7 @@ public class DoctorTask extends SchedulerTask{
         elements.add(checkKubectl());
         elements.add(checkPodman());
         elements.add(checkInternetConnected());
+        doctorRepository.deleteAll();
         doctorRepository.saveAll(elements);
     }
 }
