@@ -1,11 +1,13 @@
 id: 1
-title: Some sort of title
+title: Network Test
 version: 1
 depth: 3
-description: fiojwüofjowiejfo üoiejfo<üsijf< <üsoiejfo<üisjfoi<sjefürog oshfohsf
+description: This test will test the base network settings on your machine only works in linux
 
 steps:
-  - title: Check Directory
+  - title: Ping Google.com
     commands:
-      - echo "test test"
-      - docker --version
+      - ping 8.8.8.8
+  - title: Ping localhost
+    commands:
+      - ping localhost

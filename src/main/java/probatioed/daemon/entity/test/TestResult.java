@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class TestResult {
     private String title;
+    private String description;
     private Integer testId;
     private String info;
     private Boolean successful;
@@ -47,5 +48,13 @@ public class TestResult {
 
     public void setStepResults(ArrayList<StepResult> stepResults) {
         this.stepResults = stepResults;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

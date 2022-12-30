@@ -86,6 +86,7 @@ public class Test {
         TestResult testResult = new TestResult();
         testResult.setTestId(this.id);
         testResult.setTitle(this.title);
+        testResult.setDescription(this.description);
         ArrayList<StepResult> stepResults = new ArrayList<>();
         for (Step step : this.steps) {
             StepResult stepResult = new StepResult();
