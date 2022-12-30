@@ -3,6 +3,7 @@ package probatioed.daemon.scheduler.tasks;
 import probatioed.daemon.entity.CheckElement;
 import probatioed.daemon.repository.DoctorRepository;
 import probatioed.daemon.repository.ProjectRepository;
+import probatioed.daemon.repository.TestRepository;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,8 +11,9 @@ import java.util.ArrayList;
 import static probatioed.daemon.utils.DoctorHelper.*;
 
 public class DoctorTask extends SchedulerTask{
-    public DoctorTask(DoctorRepository doctorRepository, ProjectRepository projectRepository) {
-        super(doctorRepository, projectRepository);
+
+    public DoctorTask(DoctorRepository doctorRepository, ProjectRepository projectRepository, TestRepository testRepository) {
+        super(doctorRepository, projectRepository, testRepository);
     }
 
     @Override

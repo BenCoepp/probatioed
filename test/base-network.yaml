@@ -1,0 +1,11 @@
+id: 1
+title: Some sort of title
+version: 1
+depth: 3
+description: fiojwüofjowiejfo üoiejfo<üsijf< <üsoiejfo<üisjfoi<sjefürog oshfohsf
+
+steps:
+  - title: Check Directory
+    commands:
+      - echo "test test"
+      - docker --version
