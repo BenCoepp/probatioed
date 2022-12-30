@@ -3,10 +3,7 @@ package probatioed.daemon.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import probatioed.daemon.entity.App;
 import probatioed.daemon.entity.CheckElement;
 import probatioed.daemon.entity.Project;
@@ -15,6 +12,7 @@ import probatioed.daemon.repository.ProjectRepository;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ListIterator;
 
 @Controller
 @RequestMapping("/api/project")
@@ -27,6 +25,29 @@ public class ProjectController {
     public ResponseEntity<List<Project>> getAll(){
         List<Project> projects = projectRepository.findAll();
         return ResponseEntity.ok(projects);
+    }
+
+    @GetMapping("/count")
+    public ResponseEntity<Integer> count(){
+        long count = projectRepository.count();
+        return ResponseEntity.ok(Math.toIntExact(count));
+    }
+
+    @PostMapping("/{title}/remove")
+    public ResponseEntity<Integer> remove(@PathVariable String title) throws IOException {
+        App app = new App();
+        app.init();
+        ArrayList<Project> projects = app.getProjects();
+        ListIterator<Project> iter = projects.listIterator();
+        while(iter.hasNext()){
+            if(iter.next().getTitle().equals(title)){
+                iter.remove();
+            }
+        }
+        app.setProjects(projects);
+        projectRepository.deleteAll();
+        projectRepository.saveAll(projects);
+        return ResponseEntity.ok(200);
     }
 
     @PostMapping("/test")
